@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build --configuration Release'
+                sh 'dotnet build ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln --configuration Release'
             }
         }
 
