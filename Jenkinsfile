@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Restore') {
             steps {
-                sh 'dotnet restore'
+                sh 'dotnet restore ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'dotnet test --no-build --configuration Release'
+                sh 'dotnet test ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln --no-build --configuration Release'
             }
         }
     }
