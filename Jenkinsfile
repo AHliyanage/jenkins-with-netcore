@@ -4,21 +4,21 @@ pipeline {
     stages {
         stage('Restore') {
             steps {
-                sh 'dotnet restore ConsoleAppWithJenkinsPipeline.sln'
+                sh 'dotnet restore ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln'
 		echo "Restored."
             }
         }
 
         stage('Build') {
             steps {
-                sh 'dotnet build ConsoleAppWithJenkinsPipeline.sln --configuration Release'
+                sh 'dotnet build ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln --configuration Release'
 		echo "Built."
             }
         }
 
         stage('Test') {
             steps {
-                sh 'dotnet test ConsoleAppWithJenkinsPipeline.sln --no-build --configuration Release'
+                sh 'dotnet test ConsoleAppWithJenkinsPipeline/ConsoleAppWithJenkinsPipeline.sln --no-build --configuration Release'
 		cho "Tested."
             }
         }
